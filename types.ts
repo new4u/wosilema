@@ -5,7 +5,7 @@ export interface UserState {
   isDead: boolean;
   lastCheckIn: number; // Timestamp
   timeOfDeath: number; // Timestamp
-  balance: string; // In ETH
+  balance: string; // In MON
   heir: string;
   lastWords: string;
   tombstoneId?: number; // Added to match contract

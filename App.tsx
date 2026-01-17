@@ -21,6 +21,13 @@ function App() {
   });
   const [loading, setLoading] = useState(false);
   const [registerWords, setRegisterWords] = useState("");
+  const [heirFromUrl, setHeirFromUrl] = useState<string>('');
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const heir = params.get('heir');
+    if (heir) setHeirFromUrl(heir);
+  }, []);
 
   // Poll for death status if registered
   useEffect(() => {
@@ -63,9 +70,11 @@ function App() {
     }
     setLoading(true);
     try {
-      // Deposit 0.1 ETH and register unique words
+      // Deposit 0.1 MON and register unique words
       const updated = await ContractService.registerUser("0.1", registerWords);
       setUser(updated);
+      setRegisterWords("");
+      await refreshUser();
     } catch (e: any) {
       console.error(e);
       alert(e.message || "Registration failed");
@@ -153,14 +162,14 @@ function App() {
               disabled={loading || !registerWords}
               className="bg-emerald-600 text-white px-8 py-3 font-bold hover:bg-emerald-500 transition-all border border-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.3)] disabled:opacity-50 disabled:shadow-none"
             >
-              {loading ? 'BIRTHING...' : '出生 / DEPOSIT 0.1 ETH'}
+              {loading ? 'BIRTHING...' : '出生 / DEPOSIT 0.1 MON'}
             </button>
           </div>
         ) : (
           // STATE: Registered (Alive or Dead)
           <>
             <StatusCard user={user} />
-            <ActionPanel user={user} refreshUser={refreshUser} />
+            <ActionPanel user={user} refreshUser={refreshUser} initialHeir={heirFromUrl} />
           </>
         )}
 

@@ -31,7 +31,7 @@ const Graveyard: React.FC = () => {
               </div>
               <div className="flex items-center gap-1">
                 <DollarSign size={12} />
-                <span>遗产/Legacy: {soul.legacyAmount} ETH</span>
+                <span>遗产/Legacy: {soul.legacyAmount} MON</span>
               </div>
             </div>
           </div>

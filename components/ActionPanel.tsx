@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { UserState } from '../types';
 import { HeartPulse, UserPlus, Coins, Quote, Lock } from 'lucide-react';
 import * as ContractService from '../services/contractService';
@@ -6,14 +6,52 @@ import * as ContractService from '../services/contractService';
 interface Props {
   user: UserState;
   refreshUser: () => void;
+  initialHeir?: string;
 }
 
-const ActionPanel: React.FC<Props> = ({ user, refreshUser }) => {
+const ActionPanel: React.FC<Props> = ({ user, refreshUser, initialHeir }) => {
   const [loading, setLoading] = useState<string | null>(null);
   const [inputs, setInputs] = useState({
     heir: '',
     estate: ''
   });
+
+  useEffect(() => {
+    if (initialHeir && !inputs.heir) {
+      setInputs(prev => ({ ...prev, heir: initialHeir }));
+    }
+  }, [initialHeir]);
+
+  const getShareUrl = (): string => {
+    const origin = window.location.origin;
+    const path = window.location.pathname;
+    const addr = user.address;
+    if (!addr) return `${origin}${path}`;
+    return `${origin}${path}?heir=${addr}`;
+  };
+
+  const copyText = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      alert('已复制到剪贴板 / Copied');
+    } catch (e) {
+      console.error(e);
+      alert('复制失败：请手动复制 / Copy failed');
+    }
+  };
+
+  const shareToX = () => {
+    const url = getShareUrl();
+    const text = '把我的地址当继承人填进去（打开链接会自动预填）/ Set me as heir (auto-fill)';
+    const share = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+    window.open(share, '_blank', 'noopener,noreferrer');
+  };
+
+  const shareToFacebook = () => {
+    const url = getShareUrl();
+    const share = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+    window.open(share, '_blank', 'noopener,noreferrer');
+  };
 
   const handleAction = async (action: string, callback: () => Promise<any>) => {
     setLoading(action);
@@ -92,6 +130,34 @@ const ActionPanel: React.FC<Props> = ({ user, refreshUser }) => {
             设置/SET
           </button>
         </div>
+        <div className="mt-3 flex flex-wrap gap-2">
+          <button
+            onClick={() => user.address && copyText(user.address)}
+            disabled={!user.address}
+            className="text-[10px] border border-zinc-800 px-2 py-1 text-zinc-300 hover:border-white hover:text-white disabled:opacity-50"
+          >
+            复制我的地址 / COPY MY ADDRESS
+          </button>
+          <button
+            onClick={() => copyText(getShareUrl())}
+            className="text-[10px] border border-zinc-800 px-2 py-1 text-zinc-300 hover:border-white hover:text-white"
+          >
+            复制分享链接 / COPY LINK
+          </button>
+          <button
+            onClick={shareToX}
+            className="text-[10px] border border-zinc-800 px-2 py-1 text-zinc-300 hover:border-white hover:text-white"
+          >
+            分享到 X
+          </button>
+          <button
+            onClick={shareToFacebook}
+            className="text-[10px] border border-zinc-800 px-2 py-1 text-zinc-300 hover:border-white hover:text-white"
+          >
+            分享到 Facebook
+          </button>
+        </div>
+        <p className="text-[10px] text-zinc-600 mt-2">别人打开分享链接后，会自动把你的地址预填到“继承人”输入框。</p>
       </div>
 
       {/* Add Estate */}
@@ -100,7 +166,7 @@ const ActionPanel: React.FC<Props> = ({ user, refreshUser }) => {
           <Coins size={16} />
           <h3 className="text-sm font-bold uppercase">追加遗产 / Estate</h3>
         </div>
-        <p className="text-xs text-zinc-500 mb-3">当前余额 / Balance: {user.balance} ETH</p>
+        <p className="text-xs text-zinc-500 mb-3">当前余额 / Balance: {user.balance} MON</p>
         <div className="flex gap-2">
           <input 
             type="number" 
@@ -117,6 +183,7 @@ const ActionPanel: React.FC<Props> = ({ user, refreshUser }) => {
             追加/ADD
           </button>
         </div>
+        <p className="text-[10px] text-zinc-600 mt-2">向合约追加 MON 增加你的遗产余额。</p>
       </div>
 
       {/* View Immutable Last Words */}

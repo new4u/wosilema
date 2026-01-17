@@ -1,0 +1,66 @@
+{
+  "contractName": "AmIDeadYet",
+  "abi": [
+    {
+      "type": "function",
+      "name": "users",
+      "stateMutability": "view",
+      "inputs": [{ "name": "", "type": "address" }],
+      "outputs": [
+        { "name": "isRegistered", "type": "bool" },
+        { "name": "isDead", "type": "bool" },
+        { "name": "balance", "type": "uint256" },
+        { "name": "lastCheckIn", "type": "uint256" },
+        { "name": "heir", "type": "address" },
+        { "name": "lastWords", "type": "string" },
+        { "name": "deathTime", "type": "uint256" },
+        { "name": "tombstoneId", "type": "uint256" }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "register",
+      "stateMutability": "payable",
+      "inputs": [{ "name": "_lastWords", "type": "string" }],
+      "outputs": []
+    },
+    {
+      "type": "function",
+      "name": "checkIn",
+      "stateMutability": "nonpayable",
+      "inputs": [],
+      "outputs": []
+    },
+    {
+      "type": "function",
+      "name": "setHeir",
+      "stateMutability": "nonpayable",
+      "inputs": [{ "name": "_heir", "type": "address" }],
+      "outputs": []
+    },
+    {
+      "type": "function",
+      "name": "addToEstate",
+      "stateMutability": "payable",
+      "inputs": [],
+      "outputs": []
+    },
+    {
+      "type": "function",
+      "name": "declareDeath",
+      "stateMutability": "nonpayable",
+      "inputs": [{ "name": "_user", "type": "address" }],
+      "outputs": []
+    },
+    {
+      "type": "function",
+      "name": "checkFriendsStatus",
+      "stateMutability": "view",
+      "inputs": [{ "name": "friends", "type": "address[]" }],
+      "outputs": [
+        { "name": "isDead", "type": "bool[]" },
+        { "name": "timeLeft", "type": "uint256[]" }
+      ]
+    }
+  ]
+}
