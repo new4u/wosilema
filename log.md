@@ -219,3 +219,21 @@
 
 - 修复 TypeScript 类型声明：新增 `vite-env.d.ts` 引入 `vite/client` 并声明 `ImportMetaEnv`。
 - 本地构建通过：`npm run build`（`tsc && vite build`）成功输出 `dist/`.
+
+# log 2026-01-17 19:05:00 +0800
+
+## prompt
+
+用户要求：把提供的静态 Demo 页面加入项目，并在 demo.html 中放置二维码图片，点击可跳转主应用（index.html）。
+
+## response / work
+
+- 新增静态页面：`public/demo.html`（纯 HTML + Tailwind CDN + lucide）
+  - 统一币种文案为 MON
+  - GitHub 链接指向仓库 `https://github.com/new4u/wosilema`
+- 新增二维码并做成跳转链接：
+  - 资源：`public/微信图片_20260117190143_164_24.png`
+  - demo 内点击二维码跳转：`/index.html`
+- 生产访问路径：
+  - Demo: `https://wosilema.netlify.app/demo.html`
+  - App: `https://wosilema.netlify.app/`
