@@ -105,7 +105,7 @@ function App() {
         </div>
         <div className="max-w-md mx-auto space-y-2">
           <p className="text-zinc-400 text-sm md:text-base">
-            每天签到，证明你还活着。不然，你的钱就是别人的了。
+            怕死吗?多”死”几次就好啦~
           </p>
           <p className="text-zinc-600 text-xs uppercase tracking-widest">
             Check in daily. Prove you're alive. Or your money belongs to someone else.

@@ -267,3 +267,13 @@
   - `Sub-second`（FINALITY）
   - `Low fees`（COST）
   - `Scalable`（DECENTRALIZE）
+
+# log 2026-01-17 19:49:00 +0800
+
+## prompt
+
+用户要求：首页主标语中文改回：怕死吗?多”死”几次就好啦~
+
+## response / work
+
+- 已在 `App.tsx` 恢复首页主标语中文文案为：`怕死吗?多”死”几次就好啦~`
