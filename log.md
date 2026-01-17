@@ -192,3 +192,30 @@
   - `App.tsx` 解析 URL 参数 `heir`，传给 `ActionPanel` 用于自动预填
   - `ActionPanel.tsx` 增加按钮：复制我的地址、复制分享链接、分享到 X、分享到 Facebook
   - 被分享的人打开链接后，继承人输入框自动带上 `heir` 参数
+
+# log 2026-01-17 17:10:00 +0800
+
+## prompt
+
+用户要求：恢复“设置继承人 / 追加资产”可用，并链接智能合约。
+
+## response / work
+
+- 合约新增方法并重新部署到 Monad：
+  - 新增：`setHeir(address)`、`addToEstate()`(payable)
+  - 新合约地址：`0x554A40E5866012Bf666654c9eE49BE5634735c52`
+- 前端启用 UI 并接入合约：
+  - `abi/AmIDeadYet.json` 增加 `setHeir/addToEstate` ABI
+  - `services/contractService.ts` 增加 `setHeir/addToEstate` 调用并在 `tx.wait()` 后刷新状态
+  - `components/ActionPanel.tsx` 恢复输入框/按钮可点击并调用对应 service
+
+# log 2026-01-17 17:20:00 +0800
+
+## prompt
+
+用户要求：本地 build 并上传到 Netlify；但 `npm run build` 失败（TS 不认识 `import.meta.env`）。
+
+## response / work
+
+- 修复 TypeScript 类型声明：新增 `vite-env.d.ts` 引入 `vite/client` 并声明 `ImportMetaEnv`。
+- 本地构建通过：`npm run build`（`tsc && vite build`）成功输出 `dist/`.
