@@ -104,13 +104,52 @@ function App() {
         </div>
         <div className="max-w-md mx-auto space-y-2">
           <p className="text-zinc-400 text-sm md:text-base">
-            怕死吗? 多”死”几次就好啦~
+            每天签到，证明你还活着。不然，你的钱就是别人的了。
           </p>
           <p className="text-zinc-600 text-xs uppercase tracking-widest">
             Check in daily. Prove you're alive. Or your money belongs to someone else.
           </p>
         </div>
       </header>
+
+      <section className="w-full max-w-4xl mb-10">
+        <div className="border border-zinc-800 bg-zinc-900/30 p-6 md:p-8">
+          <div className="grid grid-cols-1 md:grid-cols-[220px,1fr] gap-6 items-center">
+            <a
+              href="/demo.html"
+              className="block mx-auto"
+              aria-label="打开 Demo / Open Demo"
+            >
+              <img
+                src="/微信图片_20260117190143_164_24.png"
+                alt="二维码：打开 Demo / QR to open demo"
+                className="w-44 h-44 md:w-52 md:h-52 border border-zinc-800 bg-black p-2 hover:border-white transition-colors"
+              />
+              <div className="mt-3 text-[10px] text-zinc-500 uppercase tracking-widest text-center">SCAN TO START</div>
+            </a>
+            <div>
+              <h2 className="text-lg md:text-xl font-bold text-white mb-2">找到真正在乎你的紧急联系人</h2>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                扫码进入 Demo，然后连接钱包生成你在 Monad 链上独一无二的地址。把地址分享给朋友，互加地址，找到真正在乎你的紧急联系人，把你的数字资产托付给他！
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <a
+                  href="/demo.html"
+                  className="text-xs border border-zinc-700 px-3 py-2 hover:bg-white hover:text-black transition-colors"
+                >
+                  打开 Demo / DEMO
+                </a>
+                <a
+                  href="/"
+                  className="text-xs border border-zinc-700 px-3 py-2 hover:border-white hover:text-white transition-colors"
+                >
+                  进入主应用 / APP
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Main Content Area */}
       <main className="w-full max-w-4xl">
