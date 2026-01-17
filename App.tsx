@@ -8,6 +8,7 @@ import * as ContractService from './services/contractService';
 import { UserState } from './types';
 
 function App() {
+  const explorerUrl = import.meta.env.VITE_EXPLORER_URL || 'https://testnet.monadexplorer.com'
   const [user, setUser] = useState<UserState>({
     address: null,
     isConnected: false,
@@ -132,18 +133,79 @@ function App() {
               <p className="text-zinc-400 text-sm leading-relaxed">
                 扫码进入 Demo，然后连接钱包生成你在 Monad 链上独一无二的地址。把地址分享给朋友，互加地址，找到真正在乎你的紧急联系人，把你的数字资产托付给他！
               </p>
-              <div className="mt-4 flex flex-wrap gap-2">
+              <div className="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-2">
+                <a
+                  href="https://www.monad.xyz/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="border border-zinc-800 bg-black/30 px-3 py-3 hover:border-white transition-colors"
+                  aria-label="Monad 官方网站"
+                >
+                  <div className="flex items-center gap-2">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
+                      <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" stroke="currentColor" strokeWidth="1.5" />
+                      <path d="M7.5 9.5L12 12L16.5 9.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M12 12V22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                    </svg>
+                    <div>
+                      <div className="text-xs font-semibold text-white">Monad</div>
+                      <div className="text-[10px] text-zinc-500 uppercase tracking-widest">L1</div>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href={explorerUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="border border-zinc-800 bg-black/30 px-3 py-3 hover:border-white transition-colors"
+                  aria-label="Monad Explorer"
+                >
+                  <div className="flex items-center gap-2">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
+                      <path d="M10 18a8 8 0 1 1 5.3-14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M21 21l-4.35-4.35" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M10 8v4l2.5 1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <div>
+                      <div className="text-xs font-semibold text-white">Explorer</div>
+                      <div className="text-[10px] text-zinc-500 uppercase tracking-widest">Testnet</div>
+                    </div>
+                  </div>
+                </a>
+
                 <a
                   href="/demo.html"
-                  className="text-xs border border-zinc-700 px-3 py-2 hover:bg-white hover:text-black transition-colors"
+                  className="border border-zinc-800 bg-black/30 px-3 py-3 hover:border-white transition-colors"
+                  aria-label="打开 Demo"
                 >
-                  打开 Demo / DEMO
+                  <div className="flex items-center gap-2">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
+                      <path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7Z" stroke="currentColor" strokeWidth="1.5" />
+                      <path d="M10 9l5 3-5 3V9Z" fill="currentColor" />
+                    </svg>
+                    <div>
+                      <div className="text-xs font-semibold text-white">Demo</div>
+                      <div className="text-[10px] text-zinc-500 uppercase tracking-widest">Sim</div>
+                    </div>
+                  </div>
                 </a>
+
                 <a
                   href="/"
-                  className="text-xs border border-zinc-700 px-3 py-2 hover:border-white hover:text-white transition-colors"
+                  className="border border-zinc-800 bg-black/30 px-3 py-3 hover:border-white transition-colors"
+                  aria-label="进入主应用"
                 >
-                  进入主应用 / APP
+                  <div className="flex items-center gap-2">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
+                      <path d="M4 11.5L12 4l8 7.5V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8.5Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+                      <path d="M9 22v-7h6v7" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+                    </svg>
+                    <div>
+                      <div className="text-xs font-semibold text-white">App</div>
+                      <div className="text-[10px] text-zinc-500 uppercase tracking-widest">Wallet</div>
+                    </div>
+                  </div>
                 </a>
               </div>
             </div>

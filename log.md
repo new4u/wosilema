@@ -237,3 +237,19 @@
 - 生产访问路径：
   - Demo: `https://wosilema.netlify.app/demo.html`
   - App: `https://wosilema.netlify.app/`
+
+# log 2026-01-17 19:37:00 +0800
+
+## prompt
+
+用户要求：删掉首页二维码区的两个按钮，并替换为更“扣题 Monad 特性”的图标入口（并链接到 monad.xyz）。
+
+## response / work
+
+- 已在 `App.tsx` 首页二维码引导区：
+  - 删除按钮：`打开 Demo / DEMO`、`进入主应用 / APP`
+  - 替换为 4 个图标入口（内联 SVG，不新增依赖）：
+    - Monad 官网：`https://www.monad.xyz/`
+    - Monad Explorer：优先 `VITE_EXPLORER_URL`，否则 fallback `https://testnet.monadexplorer.com`
+    - Demo：`/demo.html`
+    - App：`/`
