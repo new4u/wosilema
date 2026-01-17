@@ -81,12 +81,3 @@ npm run build
 npm run deploy
 ```
 
-## README 规范（评审友好）
-
-README 必须包含：
-
-- **项目概述**（是什么/解决什么问题）
-- **安装/运行步骤**（如何在本地跑起来）
-- **主要功能或技术栈**（React/Vite/ethers/Monad 等）
-
-如有：演示账号、部署方式或许可证信息，也请在 README 中写明并保持更新。
