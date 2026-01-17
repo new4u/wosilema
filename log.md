@@ -253,3 +253,17 @@
     - Monad Explorer：优先 `VITE_EXPLORER_URL`，否则 fallback `https://testnet.monadexplorer.com`
     - Demo：`/demo.html`
     - App：`/`
+
+# log 2026-01-17 19:42:00 +0800
+
+## prompt
+
+用户要求：首页二维码区的图标要体现 Monad 的核心卖点文案：Ethereum-compatible chain delivering 10,000 TPS, sub-second finality, low fees, and scalable decentralization.
+
+## response / work
+
+- 已更新 `App.tsx` 首页二维码引导区的 4 个图标卡片含义（不新增依赖，仍使用内联 SVG）：
+  - `10,000 TPS`（THROUGHPUT）
+  - `Sub-second`（FINALITY）
+  - `Low fees`（COST）
+  - `Scalable`（DECENTRALIZE）

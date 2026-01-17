@@ -139,17 +139,18 @@ function App() {
                   target="_blank"
                   rel="noreferrer"
                   className="border border-zinc-800 bg-black/30 px-3 py-3 hover:border-white transition-colors"
-                  aria-label="Monad 官方网站"
+                  aria-label="10,000 TPS"
                 >
                   <div className="flex items-center gap-2">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
-                      <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" stroke="currentColor" strokeWidth="1.5" />
-                      <path d="M7.5 9.5L12 12L16.5 9.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                      <path d="M12 12V22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M4 14a8 8 0 1 0 16 0" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M12 6v3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M12 14l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M7 14h2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                     </svg>
                     <div>
-                      <div className="text-xs font-semibold text-white">Monad</div>
-                      <div className="text-[10px] text-zinc-500 uppercase tracking-widest">L1</div>
+                      <div className="text-xs font-semibold text-white">10,000 TPS</div>
+                      <div className="text-[10px] text-zinc-500 uppercase tracking-widest">THROUGHPUT</div>
                     </div>
                   </div>
                 </a>
@@ -159,17 +160,20 @@ function App() {
                   target="_blank"
                   rel="noreferrer"
                   className="border border-zinc-800 bg-black/30 px-3 py-3 hover:border-white transition-colors"
-                  aria-label="Monad Explorer"
+                  aria-label="Sub-second finality"
                 >
                   <div className="flex items-center gap-2">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
-                      <path d="M10 18a8 8 0 1 1 5.3-14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                      <path d="M21 21l-4.35-4.35" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                      <path d="M10 8v4l2.5 1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M12 3v3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M12 18v3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M3 12h3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M18 12h3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M8.5 15.5l7-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M9.2 11.4l-1.2 4.4 4.4-1.2" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
                     </svg>
                     <div>
-                      <div className="text-xs font-semibold text-white">Explorer</div>
-                      <div className="text-[10px] text-zinc-500 uppercase tracking-widest">Testnet</div>
+                      <div className="text-xs font-semibold text-white">Sub-second</div>
+                      <div className="text-[10px] text-zinc-500 uppercase tracking-widest">FINALITY</div>
                     </div>
                   </div>
                 </a>
@@ -177,16 +181,17 @@ function App() {
                 <a
                   href="/demo.html"
                   className="border border-zinc-800 bg-black/30 px-3 py-3 hover:border-white transition-colors"
-                  aria-label="打开 Demo"
+                  aria-label="Low fees"
                 >
                   <div className="flex items-center gap-2">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
-                      <path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7Z" stroke="currentColor" strokeWidth="1.5" />
-                      <path d="M10 9l5 3-5 3V9Z" fill="currentColor" />
+                      <path d="M12 3a7 7 0 1 0 7 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M12 7v10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M9.5 9.5c0-1.1 1.1-2 2.5-2s2.5.9 2.5 2-1.1 2-2.5 2 2.5.9 2.5 2-1.1 2-2.5 2-2.5-.9-2.5-2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                     </svg>
                     <div>
-                      <div className="text-xs font-semibold text-white">Demo</div>
-                      <div className="text-[10px] text-zinc-500 uppercase tracking-widest">Sim</div>
+                      <div className="text-xs font-semibold text-white">Low fees</div>
+                      <div className="text-[10px] text-zinc-500 uppercase tracking-widest">COST</div>
                     </div>
                   </div>
                 </a>
@@ -194,16 +199,19 @@ function App() {
                 <a
                   href="/"
                   className="border border-zinc-800 bg-black/30 px-3 py-3 hover:border-white transition-colors"
-                  aria-label="进入主应用"
+                  aria-label="Scalable decentralization"
                 >
                   <div className="flex items-center gap-2">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
-                      <path d="M4 11.5L12 4l8 7.5V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8.5Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-                      <path d="M9 22v-7h6v7" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+                      <path d="M12 3l3 3-3 3-3-3 3-3Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+                      <path d="M5 12l3 3-3 3-3-3 3-3Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+                      <path d="M19 12l3 3-3 3-3-3 3-3Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+                      <path d="M12 9v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M8 15h8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                     </svg>
                     <div>
-                      <div className="text-xs font-semibold text-white">App</div>
-                      <div className="text-[10px] text-zinc-500 uppercase tracking-widest">Wallet</div>
+                      <div className="text-xs font-semibold text-white">Scalable</div>
+                      <div className="text-[10px] text-zinc-500 uppercase tracking-widest">DECENTRALIZE</div>
                     </div>
                   </div>
                 </a>
