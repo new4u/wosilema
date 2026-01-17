@@ -1,4 +1,4 @@
-# 我死了吗？（死亡契约 / Dead Man's Switch on Monad）
+# 我死了吗？（死亡契约 / WoWsilema on Monad）
 
 一个部署在 **Monad Testnet** 的“死亡开关”DApp：你存入遗产（MON），必须定期“签到证明活着”。一旦超时未签到，任何人都可以触发“宣告死亡”，遗产将自动转给你设置的继承人，同时铸造一枚墓碑 NFT 记录你的遗言。
 
